@@ -1,13 +1,11 @@
-import { Button } from "@/components/ui/button";
-import "./App.css";
+
+import Layout from "./Layout/Layout";
 
 function App() {
   return (
-    <>
-      <div>
-        <Button>Click me</Button>
-      </div>
-    </>
+    <div className="h-screen w-screen">
+      <Layout />
+    </div>
   );
 }
 
