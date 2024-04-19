@@ -1,6 +1,7 @@
 import React from 'react';
-import Sidebar from '@/Router/Sidebar';
-import Router from '@/Router/Router';
+import Sidebar from '../Router/Sidebar';
+import RouterPages from '../Router/RouterPages';
+
 
 const Layout = () => {
   return (
@@ -10,7 +11,7 @@ const Layout = () => {
          <Sidebar />
        </div>
        <div style={{ width: "90%", height: "100%", backgroundColor: "gray.300", overflowY: "auto" }}>
-         <Router />
+         <RouterPages />
        </div>
      </div>
   );

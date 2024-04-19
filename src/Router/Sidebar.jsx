@@ -16,15 +16,15 @@ const Sidebar = () => {
 
       {/* Routes */}
       <div style={{backgroundColor: location.pathname === '/route1' ? 'lightblue' : 'white' }}>
-        <Link to="/route1" className="block mb-2" style={{ padding: "10px", borderRadius: "5px", color: location.pathname === '/route1' ? 'white' : '#1a202c',  }}>
+        <Link to="/overview" className="block mb-2" style={{ padding: "10px", borderRadius: "5px", color: location.pathname === '/route1' ? 'white' : '#1a202c',  }}>
           <PiSquaresFourBold style={{ fontSize: "31px" }} />
-          <span>Menu</span>
+          <span >Menu</span>
         </Link>
       </div>
-      <div style={{backgroundColor: location.pathname === '/route2' ? 'lightblue' : 'white' }}>
-        <Link to="/route2" className="block" style={{ padding: "10px", borderRadius: "5px", color: location.pathname === '/route2' ? 'white' : '#1a202c', }}>
+      <div style={{backgroundColor: location.pathname === '/route2' ? 'lightblue' : 'white', }}>
+        <Link to="/course" className="block" style={{ padding: "10px", borderRadius: "5px", color: location.pathname === '/route2' ? 'white' : '#1a202c', }}>
           <RiPlayListLine style={{ fontSize: "31px" }} />
-          <span>Course</span>
+          <span >Course</span>
         </Link>
       </div>
     </div>
