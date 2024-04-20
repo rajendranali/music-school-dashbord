@@ -37,13 +37,60 @@ export function TableDemo({ dataSource, column }) {
             <TableCell className="h-8">{invoice?.instrument}</TableCell>
             <TableCell className="h-8">{invoice?.numStudents}</TableCell>
             <TableCell className="h-8">{invoice?.price}</TableCell>
-            <TableCell className="h-8">{invoice?.status}</TableCell>
+            <TableCell
+              className={`h-8 ${
+                invoice.status === "Active" ? "rounded-sm" : ""
+              }`}
+            >
+              {invoice.status === "Active" ? (
+                <button className="bg-green-200 text-gray-400 py-1 px-4 rounded-xl font-normal">
+                  {invoice.status}
+                </button>
+              ) : invoice.status === "Closed" ? (
+                <button className="bg-red-200 text-gray-400 py-1 px-4 rounded-xl font-normal">
+                  {invoice.status}
+                </button>
+              ) : invoice.status === "Archive" ? (
+                <button className="bg-gray-300 text-gray-600 py-1 px-4 rounded-xl font-normal">
+                  {invoice.status}
+                </button>
+              ) : (
+                invoice.status
+              )}
+            </TableCell>
+
             <TableCell className="h-8 text-xl">
               <Button className="bg-white border-none">
-                <Popover>
-                  <PopoverTrigger className="bg-white border-none"><BsThreeDotsVertical/></PopoverTrigger>
-                  <PopoverContent>
-                    Place content for the popover here.
+                <Popover className="relative">
+                  <PopoverTrigger className="bg-white p-2 rounded-full cursor-pointer">
+                    <BsThreeDotsVertical />
+                  </PopoverTrigger>
+                  <PopoverContent className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg">
+                    <ul className="text-left">
+                      {" "}
+                      {/* Align list items and button content to the left */}
+                      <li className="text-left">
+                        {" "}
+                        {/* Align list item to the left */}
+                        <button className="w-full px-4 text-sm text-gray-600 bg-white hover:bg-gray-100 focus:outline-none font-normal truncate">
+                          Edit Course
+                        </button>
+                      </li>
+                      <li className="text-left">
+                        {" "}
+                        {/* Align list item to the left */}
+                        <button className="w-full px-4 text-sm text-gray-600 bg-white hover:bg-gray-100 focus:outline-none font-normal truncate">
+                          Archive Course
+                        </button>
+                      </li>
+                      <li className="text-left">
+                        {" "}
+                        {/* Align list item to the left */}
+                        <button className="w-full px-4 text-sm text-gray-600 bg-white hover:bg-gray-100 focus:outline-none font-normal truncate">
+                          Close Course
+                        </button>
+                      </li>
+                    </ul>
                   </PopoverContent>
                 </Popover>
               </Button>

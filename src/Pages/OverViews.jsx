@@ -93,7 +93,7 @@ const OverViews = () => {
         type="best_std"
       />
 
-      <Button className="bg-purple-400 border-none rounded-xl mt-2 mb-2">+ Add Course</Button>
+      <Button className="bg-purple-400 border-none rounded-xl mt-2 mb-2">+Add Course</Button>
     </div>
   );
 };

@@ -144,7 +144,7 @@
             "instrument": "Piano",
             "numStudents": "15",
             "price": "$200",
-            "status": "Active",
+            "status": "Archive",
             "action": "Edit"
         },
         {
@@ -156,7 +156,7 @@
             "instrument": "Guitar",
             "numStudents": "12",
             "price": "$180",
-            "status": "Active",
+            "status": "Closed",
             "action": "Edit"
         },
         {
