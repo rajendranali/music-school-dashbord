@@ -1,6 +1,7 @@
 import CardComponents from "@/CommonComponents/CardComponents";
 import React from "react";
 import { TableDemo } from "@/CommonComponents/NewTable";
+import StudentTable from "@/CommonComponents/StudentTable";
 const StudentHeader = [
   {
     header: "Enr.No",
@@ -73,7 +74,7 @@ const OverViews = () => {
           </p>
         </div>
       </div>
-      <TableDemo dataSource={StudentHeader} />
+      <StudentTable dataSource={StudentHeader} />
 
       <div className="mt-10 flex justify-between">
         <div>
@@ -86,7 +87,7 @@ const OverViews = () => {
         </div>
       </div>
 
-      <TableDemo dataSource={StudentHeader} />
+      <StudentTable dataSource={StudentHeader} />
     </div>
   );
 };
