@@ -2,34 +2,39 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { RiPlayListLine } from "react-icons/ri";
 import { PiSquaresFourBold } from "react-icons/pi";
-
+import { FiLogOut } from "react-icons/fi";
 const Sidebar = () => {
   // Get the current location
   const location = useLocation();
 
   return (
-    <div style={{ padding: "20px", display: "flex", flexDirection: "column", alignItems: "center", gap: "20px" }}>
+    <div className="p-4 flex flex-col justify-between h-full">
       {/* Logo */}
       <div className="mb-4">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTABSta4ztO2Z73YCEvZDFgCPesndhqt-seBg&s" alt="Logo" style={{ maxWidth: "100%" }} />
       </div>
 
       {/* Routes */}
-      <div style={{backgroundColor: location.pathname === '/route1' ? 'lightblue' : 'white' }}>
-        <Link to="/overview" className="block mb-2" style={{ padding: "10px", borderRadius: "5px", color: location.pathname === '/route1' ? 'white' : '#1a202c',  }}>
-          <PiSquaresFourBold style={{ fontSize: "31px" }} />
-          <span >Menu</span>
+      <div className="flex flex-col gap-4">
+        <Link to="/overview" className={`flex items-center justify-start p-4 rounded-lg ${location.pathname === '/overview' ? 'bg-blue-500 text-white' : 'bg-white text-gray-700 hover:bg-blue-100'}`}>
+          <PiSquaresFourBold className="text-5xl mr-2" />
+          <span className="text-xs">Menu</span>
+        </Link>
+        <Link to="/course" className={`flex items-center justify-start p-4 rounded-lg ${location.pathname === '/course' ? 'bg-blue-500 text-white' : 'bg-white text-gray-700 hover:bg-blue-100'}`}>
+          <RiPlayListLine className="text-5xl mr-2 " />
+          <span className="text-xs">Course</span>
         </Link>
       </div>
-      <div style={{backgroundColor: location.pathname === '/route2' ? 'lightblue' : 'white', }}>
-        <Link to="/course" className="block" style={{ padding: "10px", borderRadius: "5px", color: location.pathname === '/route2' ? 'white' : '#1a202c', }}>
-          <RiPlayListLine style={{ fontSize: "31px" }} />
-          <span >Course</span>
-        </Link>
+
+      {/* Logout Button */}
+      <div className="mt-auto">
+        <button className="p-4 bg-white text-gray-700 rounded-xl hover:bg-gray-200 border-none">
+          <FiLogOut/>
+          <span className="text-xs">Logout</span>
+        </button>
       </div>
     </div>
   );
 };
 
 export default Sidebar;
-

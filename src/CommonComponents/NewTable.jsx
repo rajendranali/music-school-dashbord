@@ -1,50 +1,70 @@
-import React from 'react';
+import React from "react";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
-const NewTable = () => {
+const invoices = [
+  {
+    invoice: "INV001",
+    paymentStatus: "Paid",
+    totalAmount: "$250.00",
+    paymentMethod: "Credit Card",
+  },
+  {
+    invoice: "INV002",
+    paymentStatus: "Pending",
+    totalAmount: "$150.00",
+    paymentMethod: "PayPal",
+  },
+  {
+    invoice: "INV003",
+    paymentStatus: "Unpaid",
+    totalAmount: "$350.00",
+    paymentMethod: "Bank Transfer",
+  },
+  // Add more invoice data as needed
+];
+
+export function TableDemo({ dataSource }) {
+  console.log("Dar6ty", dataSource);
   return (
-    <div style={{ marginTop: '20px' }}>
-      <table style={{ width: '98%', borderCollapse: 'collapse', backgroundColor: 'white' ,color:"gray"}}>
-        <thead>
-          <tr>
-            <th style={tableHeaderStyle}>Column 1</th>
-            <th style={tableHeaderStyle}>Column 2</th>
-            <th style={tableHeaderStyle}>Column 3</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style={tableCellStyle}>Data 1</td>
-            <td style={tableCellStyle}>Data 2</td>
-            <td style={tableCellStyle}>Data 3</td>
-          </tr>
-          <tr>
-            <td style={tableCellStyle}>Data 4</td>
-            <td style={tableCellStyle}>Data 5</td>
-            <td style={tableCellStyle}>Data 6</td>
-          </tr>
-          <tr>
-            <td style={tableCellStyle}>Data 7</td>
-            <td style={tableCellStyle}>Data 8</td>
-            <td style={tableCellStyle}>Data 9</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <Table className="min-w-full bg-white  text-gray-600">
+      {/* <TableCaption className="text-center text-gray-600">A list of your recent invoices.</TableCaption> */}
+      <TableHeader>
+        <TableRow>
+          {dataSource?.map((it) => (
+            <TableHead className="w-30 ">{it.header}</TableHead>
+          ))}
+
+          {/* <TableHead>Status</TableHead>
+          <TableHead>Method</TableHead>
+          <TableHead className="text-right">Amount</TableHead> */}
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {invoices.map((invoice) => (
+          <TableRow key={invoice.invoice}>
+            <TableCell className="h-2">{invoice.invoice}</TableCell>
+            <TableCell className=" h-8">{invoice.paymentStatus}</TableCell>
+            <TableCell className=" h-8">{invoice.paymentMethod}</TableCell>
+            <TableCell className=" h-8">{invoice.totalAmount}</TableCell>
+            <TableCell className=" h-8">{invoice.totalAmount}</TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+      {/* <TableFooter>
+        <TableRow>
+          <TableCell colSpan={3} className="font-medium">Total</TableCell>
+          <TableCell className="text-right font-medium">$2,500.00</TableCell>
+        </TableRow>
+      </TableFooter> */}
+    </Table>
   );
-};
-
-const tableHeaderStyle = {
-  backgroundColor: '#f2f2f2',
-  border: '1px solid #dddddd',
-  padding: '8px',
-  textAlign: 'left',
-};
-
-const tableCellStyle = {
-  border: '1px solid #dddddd',
-  padding: '8px',
-  textAlign: 'left',
-  backgroundColor: 'white',
-};
-
-export default NewTable;
+}
