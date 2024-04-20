@@ -16,11 +16,11 @@ const Sidebar = () => {
 
       {/* Routes */}
       <div className="flex flex-col gap-4">
-        <Link to="/overview" className={`flex flex-col items-center justify-start p-4 rounded-xl ${location.pathname === '/overview' ? 'bg-blue-500 text-white' : 'bg-white text-gray-700 hover:bg-blue-100'}`}>
+        <Link to="/overview" className={`flex flex-col items-center justify-start p-4 rounded-xl ${location.pathname === '/overview' ? 'bg-blue-300 text-white' : 'bg-white text-gray-700 hover:bg-blue-100'}`}>
           <PiSquaresFourBold className="text-3xl mr-2" />
           <span className="text-xs">Menu</span>
         </Link>
-        <Link to="/course" className={`flex  flex-col items-center justify-start p-4 rounded-xl ${location.pathname === '/course' ? 'bg-blue-500 text-white' : 'bg-white text-gray-700 hover:bg-blue-100'}`}>
+        <Link to="/course" className={`flex  flex-col items-center justify-start p-4 rounded-xl ${location.pathname === '/course' ? 'bg-blue-300 text-white' : 'bg-white text-gray-700 hover:bg-blue-100'}`}>
           <RiPlayListLine className="text-3xl mr-2 " />
           <span className="text-xs">Course</span>
         </Link>

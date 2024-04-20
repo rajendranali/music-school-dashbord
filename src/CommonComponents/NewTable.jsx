@@ -31,14 +31,14 @@ export function TableDemo({ dataSource, column }) {
         {column?.map((invoice) => (
           <TableRow key={invoice.invoice}>
             <TableCell className="h-2">{invoice?.name}</TableCell>
-            <TableCell className="h-8">{invoice?.instructor}</TableCell>
-            <TableCell className="h-8">{invoice?.dayOfWeek}</TableCell>
-            <TableCell className="h-8">{invoice?.description}</TableCell>
-            <TableCell className="h-8">{invoice?.instrument}</TableCell>
-            <TableCell className="h-8">{invoice?.numStudents}</TableCell>
-            <TableCell className="h-8">{invoice?.price}</TableCell>
+            <TableCell className="h-2">{invoice?.instructor}</TableCell>
+            <TableCell className="h-2">{invoice?.dayOfWeek}</TableCell>
+            <TableCell className="h-2">{invoice?.description}</TableCell>
+            <TableCell className="h-2">{invoice?.instrument}</TableCell>
+            <TableCell className="h-2">{invoice?.numStudents}</TableCell>
+            <TableCell className="h-2">{invoice?.price}</TableCell>
             <TableCell
-              className={`h-8 ${
+              className={`h-2 ${
                 invoice.status === "Active" ? "rounded-sm" : ""
               }`}
             >
