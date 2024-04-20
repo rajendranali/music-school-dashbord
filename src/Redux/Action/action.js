@@ -1,6 +1,17 @@
-import { ACTION_TYPE ,FETCH_COURSES_FAILURE,FETCH_COURSES_SUCCESS} from "../ActionType/actionType";
-
+// actions.js
 import axios from 'axios';
+import {
+  FETCH_COURSES_SUCCESS,
+  FETCH_COURSES_FAILURE,
+  FETCH_LATEST_ENROLLMENT_COLUMN_SUCCESS,
+  FETCH_LATEST_ENROLLMENT_COLUMN_FAILURE,
+  FETCH_LATEST_ENROLLMENT_DATA_SUCCESS,
+  FETCH_LATEST_ENROLLMENT_DATA_FAILURE,
+  FETCH_BEST_ENROLLMENT_COLUMN_SUCCESS,
+  FETCH_BEST_ENROLLMENT_COLUMN_FAILURE,
+  FETCH_BEST_ENROLLMENT_DATA_SUCCESS,
+  FETCH_BEST_ENROLLMENT_DATA_FAILURE,
+} from "../ActionType/actionType";
 
 export const fetchCourses = () => async dispatch => {
   try {
@@ -9,5 +20,45 @@ export const fetchCourses = () => async dispatch => {
   } catch (error) {
     console.error('Error fetching data:', error);
     dispatch({ type: FETCH_COURSES_FAILURE, payload: error });
+  }
+};
+
+export const fetchLatestEnrollmentColumn = () => async dispatch => {
+  try {
+    const response = await axios.get('http://localhost:3001/latestenrollmentcolumn');
+    dispatch({ type: FETCH_LATEST_ENROLLMENT_COLUMN_SUCCESS, payload: response.data });
+  } catch (error) {
+    console.error('Error fetching latest enrollment column data:', error);
+    dispatch({ type: FETCH_LATEST_ENROLLMENT_COLUMN_FAILURE, payload: error });
+  }
+};
+
+export const fetchLatestEnrollmentData = () => async dispatch => {
+  try {
+    const response = await axios.get('http://localhost:3001/latestenrollmemtdata');
+    dispatch({ type: FETCH_LATEST_ENROLLMENT_DATA_SUCCESS, payload: response.data });
+  } catch (error) {
+    console.error('Error fetching latest enrollment data:', error);
+    dispatch({ type: FETCH_LATEST_ENROLLMENT_DATA_FAILURE, payload: error });
+  }
+};
+
+export const fetchBestEnrollmentColumn = () => async dispatch => {
+  try {
+    const response = await axios.get('http://localhost:3001/bestenrollmentcolumn');
+    dispatch({ type: FETCH_BEST_ENROLLMENT_COLUMN_SUCCESS, payload: response.data });
+  } catch (error) {
+    console.error('Error fetching best enrollment column data:', error);
+    dispatch({ type: FETCH_BEST_ENROLLMENT_COLUMN_FAILURE, payload: error });
+  }
+};
+
+export const fetchBestEnrollmentData = () => async dispatch => {
+  try {
+    const response = await axios.get('http://localhost:3001/bestenrollmemtdata');
+    dispatch({ type: FETCH_BEST_ENROLLMENT_DATA_SUCCESS, payload: response.data });
+  } catch (error) {
+    console.error('Error fetching best enrollment data:', error);
+    dispatch({ type: FETCH_BEST_ENROLLMENT_DATA_FAILURE, payload: error });
   }
 };

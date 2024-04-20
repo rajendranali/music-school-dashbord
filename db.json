@@ -1,166 +1,139 @@
 {
-    "students": [
+    "latestenrollmentcolumn":[
         {
-            "id": 1,
-            "enrollmentNo": "ENR001",
-            "studentName": "John Doe",
-            "courseName": "Piano",
-            "fees": 500,
-            "enrollmentDate": "2022-04-20"
+          "id": 1,
+          "header": "Enr.No"
         },
         {
-            "id": 2,
-            "enrollmentNo": "ENR002",
-            "studentName": "Jane Smith",
-            "courseName": "Guitar",
-            "fees": 600,
-            "enrollmentDate": "2022-05-15"
+          "id": 2,
+          "header": "S.Name"
         },
         {
-            "id": 3,
-            "enrollmentNo": "ENR003",
-            "studentName": "Alice Johnson",
-            "courseName": "Violin",
-            "fees": 450,
-            "enrollmentDate": "2022-06-10"
+          "id": 3,
+          "header": "C.Name"
         },
         {
-            "id": 4,
-            "enrollmentNo": "ENR004",
-            "studentName": "Michael Lee",
-            "courseName": "Drums",
-            "fees": 550,
-            "enrollmentDate": "2022-06-25"
+          "id": 4,
+          "header": "Fees"
+        },
+        {
+          "id": 5,
+          "header": "Enr.Date"
+        }
+      ],
+      "latestenrollmemtdata":[
+        {
+          "ern": "Enr.No1",
+          "sname": "S.Name1",
+          "cname": "C.Name1",
+          "fees": "$100",
+          "erndate": "2024-04-21"
+        },
+        {
+          "ern": "Enr.No2",
+          "sname": "S.Name2",
+          "cname": "C.Name2",
+          "fees": "$150",
+          "erndate": "2024-04-22"
+        },
+        {
+          "ern": "Enr.No3",
+          "sname": "S.Name3",
+          "cname": "C.Name3",
+          "fees": "$200",
+          "erndate": "2024-04-23"
+        },
+        {
+          "ern": "Enr.No4",
+          "sname": "S.Name4",
+          "cname": "C.Name4",
+          "fees": "$250",
+          "erndate": "2024-04-24"
+        },
+        {
+          "ern": "Enr.No5",
+          "sname": "S.Name5",
+          "cname": "C.Name5",
+          "fees": "$300",
+          "erndate": "2024-04-25"
+        }
+      ],
+      
+      "bestenrollmentcolumn": [
+        {
+          "id": 1,
+          "header": "Reg.No"
+        },
+        {
+          "id": 2,
+          "header": "F.Name"
+        },
+        {
+          "id": 3,
+          "header": "L.Name"
+        },
+        {
+          "id": 4,
+          "header": "Course#"
         },
         {
             "id": 5,
-            "enrollmentNo": "ENR005",
-            "studentName": "Emily Davis",
-            "courseName": "Saxophone",
-            "fees": 700,
-            "enrollmentDate": "2022-07-05"
-        },
+            "header": "Total Fess"
+          },
         {
-            "id": 6,
-            "enrollmentNo": "ENR006",
-            "studentName": "Daniel Wilson",
-            "courseName": "Flute",
-            "fees": 400,
-            "enrollmentDate": "2022-07-15"
-        },
-        {
-            "id": 7,
-            "enrollmentNo": "ENR007",
-            "studentName": "Olivia Brown",
-            "courseName": "Clarinet",
-            "fees": 600,
-            "enrollmentDate": "2022-07-25"
-        },
-        {
-            "id": 8,
-            "enrollmentNo": "ENR008",
-            "studentName": "James Garcia",
-            "courseName": "Trumpet",
-            "fees": 550,
-            "enrollmentDate": "2022-08-05"
-        },
-        {
-            "id": 9,
-            "enrollmentNo": "ENR009",
-            "studentName": "Sophia Martinez",
-            "courseName": "Cello",
-            "fees": 650,
-            "enrollmentDate": "2022-08-15"
-        },
-        {
-            "id": 10,
-            "enrollmentNo": "ENR010",
-            "studentName": "William Anderson",
-            "courseName": "Harmonica",
-            "fees": 450,
-            "enrollmentDate": "2022-08-25"
-        },
-        {
-            "id": 11,
-            "enrollmentNo": "ENR011",
-            "studentName": "Isabella Taylor",
-            "courseName": "Accordion",
-            "fees": 600,
-            "enrollmentDate": "2022-09-05"
-        },
-        {
-            "id": 12,
-            "enrollmentNo": "ENR012",
-            "studentName": "David Hernandez",
-            "courseName": "Trombone",
-            "fees": 500,
-            "enrollmentDate": "2022-09-15"
-        },
-        {
-            "id": 13,
-            "enrollmentNo": "ENR013",
-            "studentName": "Mia Lopez",
-            "courseName": "Harp",
-            "fees": 700,
-            "enrollmentDate": "2022-09-25"
-        },
-        {
-            "id": 14,
-            "enrollmentNo": "ENR014",
-            "studentName": "Ethan Gonzalez",
-            "courseName": "Bagpipes",
-            "fees": 600,
-            "enrollmentDate": "2022-10-05"
-        },
-        {
-            "id": 15,
-            "enrollmentNo": "ENR015",
-            "studentName": "Ava Perez",
-            "courseName": "Mandolin",
-            "fees": 550,
-            "enrollmentDate": "2022-10-15"
-        },
-        {
-            "id": 16,
-            "enrollmentNo": "ENR016",
-            "studentName": "Noah Turner",
-            "courseName": "Oboe",
-            "fees": 450,
-            "enrollmentDate": "2022-10-25"
-        },
-        {
-            "id": 17,
-            "enrollmentNo": "ENR017",
-            "studentName": "Emma Hernandez",
-            "courseName": "Banjo",
-            "fees": 600,
-            "enrollmentDate": "2022-11-05"
-        },
-        {
-            "id": 18,
-            "enrollmentNo": "ENR018",
-            "studentName": "Liam Scott",
-            "courseName": "Accordion",
-            "fees": 550,
-            "enrollmentDate": "2022-11-15"
-        },
-        {
-            "id": 19,
-            "enrollmentNo": "ENR019",
-            "studentName": "Olivia Murphy",
-            "courseName": "Dulcimer",
-            "fees": 650,
-            "enrollmentDate": "2022-11-25"
-        },
-        {
-            "id": 20,
-            "enrollmentNo": "ENR020",
-            "studentName": "Benjamin Rivera",
-            "courseName": "Tuba",
-            "fees": 500,
-            "enrollmentDate": "2022-12-05"
+          "id": 5,
+          "header": "Reg.Date"
         }
-    ],
+      ],
+      "bestenrollmemtdata": [
+        {
+          "id": 1,
+          "ern": "Best Enr.No1",
+          "sname": "Best S.Name1",
+          "cname": "Best C.Name1",
+          "course": "Best Course",
+          "fees": "$400",
+          "erndate": "2024-04-26"
+        },
+        {
+          "id": 2,
+          "ern": "Best Enr.No2",
+          "sname": "Best S.Name2",
+          "cname": "Best C.Name2",
+          "course": "Best Course",
+          "fees": "$450",
+          "erndate": "2024-04-27"
+        },
+        {
+          "id": 3,
+          "ern": "Best Enr.No3",
+          "sname": "Best S.Name3",
+          "cname": "Best C.Name3",
+          "course": "Best Course",
+          "fees": "$500",
+          "erndate": "2024-04-28"
+        },
+        {
+          "id": 4,
+          "ern": "Best Enr.No4",
+          "sname": "Best S.Name4",
+          "cname": "Best C.Name4",
+          "course": "Best Course",
+          "fees": "$550",
+          "erndate": "2024-04-29"
+        },
+        {
+          "id": 5,
+          "ern": "Best Enr.No5",
+          "sname": "Best S.Name5",
+          "cname": "Best C.Name5",
+          "course": "Best Course",
+          "fees": "$600",
+          "erndate": "2024-04-30"
+        }
+      ]
+      ,
+       
     "courses": [
         {
             "id": 1,
