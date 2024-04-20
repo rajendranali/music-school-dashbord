@@ -30,15 +30,15 @@ export function TableDemo({ dataSource, column }) {
       <TableBody>
         {column?.map((invoice) => (
           <TableRow key={invoice.invoice}>
-            <TableCell className="h-2">{invoice?.name}</TableCell>
-            <TableCell className="h-2">{invoice?.instructor}</TableCell>
-            <TableCell className="h-2">{invoice?.dayOfWeek}</TableCell>
-            <TableCell className="h-2">{invoice?.description}</TableCell>
-            <TableCell className="h-2">{invoice?.instrument}</TableCell>
-            <TableCell className="h-2">{invoice?.numStudents}</TableCell>
-            <TableCell className="h-2">{invoice?.price}</TableCell>
+            <TableCell className="h-3">{invoice?.name}</TableCell>
+            <TableCell className="h-3">{invoice?.instructor}</TableCell>
+            <TableCell className="h-3">{invoice?.dayOfWeek}</TableCell>
+            <TableCell className="h-3">{invoice?.description}</TableCell>
+            <TableCell className="h-3">{invoice?.instrument}</TableCell>
+            <TableCell className="h-3">{invoice?.numStudents}</TableCell>
+            <TableCell className="h-3">{invoice?.price}</TableCell>
             <TableCell
-              className={`h-2 ${
+              className={`h-3 ${
                 invoice.status === "Active" ? "rounded-sm" : ""
               }`}
             >
@@ -59,7 +59,7 @@ export function TableDemo({ dataSource, column }) {
               )}
             </TableCell>
 
-            <TableCell className="h-8 text-xl">
+            <TableCell className="h-3 text-xl">
               <Button className="bg-white border-none">
                 <Popover className="relative">
                   <PopoverTrigger className="bg-white p-2 rounded-full cursor-pointer">
