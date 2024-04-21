@@ -5,6 +5,16 @@ import { Input } from "@/components/ui/input";
 import { AiOutlineSearch } from "react-icons/ai";
 import { Button } from "@/components/ui/button";
 import { fetchCourses } from "@/Redux/Action/action";
+import { Popover } from "@radix-ui/react-popover";
+import { PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const StudentHeader = [
   { id: 1, header: "Name" },
@@ -20,6 +30,7 @@ const StudentHeader = [
 
 const Course = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false); // State to control popover visibility
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -66,9 +77,55 @@ const Course = () => {
         column={filterData(data, searchTerm)}
       />
 
-      <Button className="bg-purple-400 p-4 rounded-xl mt-3 mb-3">
-        Add Course +
-      </Button>
+   
+ 
+<div className=" bottom-0 right-0">
+  <Popover
+    className="flex items-center justify-center z-50"
+    onClose={() => setIsPopoverOpen(false)} // Close popover when clicked outside
+  >
+    <PopoverTrigger className="bg-purple-400 p-4 rounded-xl mt-3 mb-3 text-white cursor-pointer">
+      Add Course +
+    </PopoverTrigger>
+    <PopoverContent className="bg-white rounded-lg shadow-lg">
+    <h2 className="text-gray-600">Add Course</h2>
+      <div className="p-6">
+        
+        <Input className="mb-4 border rounded-lg p-2 text-gray-600" placeholder="Course Name" />
+        <Input className="mb-4 border rounded-lg p-2 text-gray-600" placeholder="Instructor" />
+        <Input className="mb-4 border rounded-lg p-2 text-gray-600" placeholder="Description" />
+        <Select className="mb-4 border rounded-lg p-2 text-gray-600">
+          <SelectTrigger className="w-full text-gray-600">
+            <SelectValue placeholder="Theme" />
+          </SelectTrigger>
+          <SelectContent className="text-gray-600 bg-white">
+            <SelectItem value="light">Light</SelectItem>
+            <SelectItem value="dark">Dark</SelectItem>
+            <SelectItem value="system">System</SelectItem>
+          </SelectContent>
+        </Select>
+        <Select className="mb-4 border rounded-lg p-2 text-gray-600">
+          <SelectTrigger className="w-full text-gray-600">
+            <SelectValue placeholder="Category " />
+          </SelectTrigger>
+          <SelectContent className="text-gray-600 bg-white">
+            <SelectItem value="programming">Programming</SelectItem>
+            <SelectItem value="design">Design</SelectItem>
+            <SelectItem value="business">Business</SelectItem>
+          </SelectContent>
+        </Select>
+        <Input className="mb-6 border rounded-lg p-2 text-gray-600" placeholder="Price" />
+        <div className="flex justify-end">
+          <Button className="mr-3 border rounded-lg p-2 text-gray-600">Cancel</Button>
+          <Button className="bg-purple-400 text-white border rounded-lg p-2">Add Course</Button>
+        </div>
+      </div>
+    </PopoverContent>
+  </Popover>
+</div>
+
+
+   
     </div>
   );
 };

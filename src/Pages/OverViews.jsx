@@ -10,6 +10,11 @@ import {
   fetchLatestEnrollmentData,
 } from "@/Redux/Action/action";
 import { Button } from "@/components/ui/button";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
 
 const OverViews = () => {
   const dispatch = useDispatch();
@@ -93,7 +98,7 @@ const OverViews = () => {
         type="best_std"
       />
 
-      <Button className="bg-purple-400 border-none rounded-xl mt-2 mb-2">+Add Course</Button>
+      {/* <Button className="bg-purple-400 border-none rounded-xl mt-2 mb-2">+Add Course</Button> */}
     </div>
   );
 };
