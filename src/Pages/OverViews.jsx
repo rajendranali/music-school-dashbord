@@ -15,6 +15,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import LoginForm from "@/Authentication/Login";
 
 const OverViews = () => {
   const dispatch = useDispatch();
@@ -29,16 +30,16 @@ const OverViews = () => {
 
   // Access the fetched data from the Redux store using useSelector
   const latestEnrollmentColumn = useSelector(
-    (state) => state.latestEnrollmentColumn
+    (state) => state.reducer.latestEnrollmentColumn
   );
   const latestEnrollmentData = useSelector(
-    (state) => state.latestEnrollmentData
+    (state) => state.reducer.latestEnrollmentData
   );
   const bestEnrollmentColumn = useSelector(
-    (state) => state.bestEnrollmentColumn
+    (state) => state.reducer.bestEnrollmentColumn
   );
-  const bestEnrollmentData = useSelector((state) => state.bestEnrollmentData);
-  console.log("");
+  const bestEnrollmentData = useSelector((state) => state.reducer.bestEnrollmentData);
+
   return (
     <div className="px-3">
       <h2 className="text-3xl f mb-4 text-gray-500 pt-3">Overviews</h2>
@@ -99,6 +100,7 @@ const OverViews = () => {
       />
 
       {/* <Button className="bg-purple-400 border-none rounded-xl mt-2 mb-2">+Add Course</Button> */}
+      {/* <LoginForm/> */}
     </div>
   );
 };

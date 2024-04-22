@@ -37,10 +37,10 @@ const Course = () => {
     dispatch(fetchCourses());
   }, [dispatch]);
 
-  const data = useSelector((state) => state.courses);
+  const data = useSelector((state) => state.reducer.courses);
 
   const filterData = (data, term) => {
-    return data.filter(
+    return data?.filter(
       (item) =>
         item.name.toLowerCase().includes(term.toLowerCase()) ||
         item.instructor.toLowerCase().includes(term.toLowerCase()) ||

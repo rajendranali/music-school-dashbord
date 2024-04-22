@@ -11,6 +11,9 @@ import {
   FETCH_BEST_ENROLLMENT_COLUMN_FAILURE,
   FETCH_BEST_ENROLLMENT_DATA_SUCCESS,
   FETCH_BEST_ENROLLMENT_DATA_FAILURE,
+  LOGIN_REQUEST,
+  LOGIN_SUCCESS,
+  LOGIN_FAILURE
 } from "../ActionType/actionType";
 
 export const fetchCourses = () => async dispatch => {
@@ -60,5 +63,35 @@ export const fetchBestEnrollmentData = () => async dispatch => {
   } catch (error) {
     console.error('Error fetching best enrollment data:', error);
     dispatch({ type: FETCH_BEST_ENROLLMENT_DATA_FAILURE, payload: error });
+  }
+};
+
+
+//// login action 
+export const login = (username, password) => async dispatch => {
+  dispatch({ type: LOGIN_REQUEST });
+  
+  try {
+    const response = await axios.get('http://localhost:3001/login');
+    const { data } = response;
+
+    if (data && data.username === username && data.password === password) {
+      dispatch({ type: LOGIN_SUCCESS, payload: { username } });
+    } else {
+      // If username or password doesn't match, dispatch failure action
+      dispatch({ type: LOGIN_FAILURE, payload: 'Invalid username or password' });
+    }
+  } catch (error) {
+    console.error('Error logging in:', error);
+    dispatch({ type: LOGIN_FAILURE, payload: error });
+  }}
+
+export const logout = () => async dispatch => {
+  try {
+    // Assuming you have a logout endpoint like '/logout'
+    ;
+    dispatch({ type: LOGIN_SUCCESS, payload: null });
+  } catch (error) {
+    console.error('Error logging out:', error);
   }
 };

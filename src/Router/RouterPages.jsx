@@ -1,3 +1,4 @@
+import LoginForm from "@/Authentication/Login";
 import Course from "@/Pages/Course";
 import OverViews from "@/Pages/OverViews";
 import React from "react";
@@ -8,6 +9,7 @@ const RouterPages = () => {
       <Route exact path="/course" element={<Course />} />
 
       <Route exact path="/overview" element={<OverViews />} />
+      <Route exact path="/login" element={<LoginForm />} />
     </Routes>
   );
 };
